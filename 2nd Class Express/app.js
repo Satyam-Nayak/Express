@@ -38,6 +38,7 @@ app.get('/',(req,res)=>{
 app.post('/user',async(req,res)=>{
     let data=await collection.insertOne(req.body)
     console.log(data);
+    // console.log(req.body);  it post all the data in the terminal
     res.send(req.body)
 })
 
