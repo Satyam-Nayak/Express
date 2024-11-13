@@ -4,11 +4,14 @@
 
 const express = require('express')
 const app = express()
-const mongoose= require('mongoose')
+// const mongoose= require('mongoose')
+const {connect}= require('mongoose')
+let {PORT,MONGODB_URI} = require('./config/index')
 
 
 let connectDb = async()=>{
-    await mongoose.connect('mongodb://localhost:27017')
+    // await mongoose.connect(MONGODB_URI)
+    await connect(MONGODB_URI)
     console.log("mongodb connected")
 }
 connectDb()
@@ -16,6 +19,7 @@ connectDb()
 app.get('/',(req,res)=>{
     res.send('Hello')
 })
+
 
 app.listen(5000,err=>{
     if(err) throw err;
