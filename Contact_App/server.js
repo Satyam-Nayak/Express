@@ -8,7 +8,6 @@ const app = express()
 const {connect}= require('mongoose')
 let {PORT,MONGODB_URI} = require('./config/index')
 
-
 let connectDb = async()=>{
     // await mongoose.connect(MONGODB_URI)
     await connect(MONGODB_URI)
@@ -21,7 +20,7 @@ app.get('/',(req,res)=>{
 })
 
 
-app.listen(5000,err=>{
+app.listen(PORT || 5000,err=>{
     if(err) throw err;
     console.log('server is running on port 5000')
 })
