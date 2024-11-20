@@ -20,4 +20,4 @@ const cnt_Schema= new Schema({
     }
 },{timestamps:true}
 )
-module.exports=model('cnt_Schema')
+module.exports=model('cnt_Schema',cnt_Schema,'cnt_Schema')
