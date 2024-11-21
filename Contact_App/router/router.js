@@ -5,7 +5,7 @@ const Cnt_Schema=require('../schema/schema')
 
 const fs = require('fs')
 router.get('/style',(req,res)=>{
-    fs.readFile('./public/addContact.css',(err,data)=>{
+    fs.readFile('./public/style.css',(err,data)=>{
         if(err) throw err;
         res.end(data)
     })
@@ -23,8 +23,8 @@ router.post('/addContact',async(req,res)=>{
 })
 
 router.get('/allContact',async(req,res)=>{
-    let payload = await Cnt_Schema.find()
-    res.render('contact_App/cnt_list',{title:'All-Contacts'},payload)
+    let payload = await Cnt_Schema.find({}).lean()
+    res.render('contact_App/cnt_list',{title:'All-Contacts',payload})
 })
 
 
