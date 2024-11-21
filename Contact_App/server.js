@@ -31,7 +31,7 @@ app.get('/home',(req,res)=>{
 })
 
 
-app.use('/api', routing)
+app.use('/api',routing)
 
 
 app.listen(PORT || 5000,err=>{
