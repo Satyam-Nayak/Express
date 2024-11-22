@@ -26,6 +26,11 @@ router.get('/allContact',async(req,res)=>{
     let payload = await Cnt_Schema.find({}).lean()
     res.render('contact_App/cnt_list',{title:'All-Contacts',payload})
 })
+// document to plain javascript object (lean)
 
+router.get('/:id',async(req,res)=>{
+    let payload = await Cnt_Schema.findOne({_id:req.params.id}).lean()
+    res.render('contact_App/single_cnt',{title:'Single-Contact',payload})
+})
 
 module.exports=router;
