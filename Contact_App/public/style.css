@@ -7,6 +7,7 @@ body {
     color: #333;
 }
 
+
 h1 {
     text-align: center;
     margin: 20px 0;
@@ -15,11 +16,42 @@ h1 {
 
 /* Home Page */
 .home1 {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
     text-align: center;
-    margin: 10px 20px;
-    font-size: 18px;
-    line-height: 1.6;
-}
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 60px #0ff;
+    animation: neon-run 1.5s infinite alternate;
+  }
+  
+  @keyframes neon-run {
+    from {
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+    }
+    to {
+      text-shadow: 0 0 10px rgb(230, 213, 230), 0 0 20px rgb(79, 75, 79), 0 0 30px rgb(196, 196, 196), 0 0 40px rgb(137, 128, 137);
+    }
+  }
+
+  .card {
+    background: #121212;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    max-width: 600px;
+    margin-left: 520px;
+  }
+  
+  .card h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
 /* Footer */
 .footer {
