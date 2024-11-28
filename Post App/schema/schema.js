@@ -1,4 +1,4 @@
-const {model,Schema} = require(mongoose)
+const {model,Schema} = require('mongoose')
 let postSchema=new Schema({
     post:{
         type:String,
@@ -14,7 +14,7 @@ let postSchema=new Schema({
     }
     
 },{
-    timestamp:true
+    timestamps:true
 })
 
 module.exports= model('post',postSchema)
