@@ -3,7 +3,11 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT
 const {connectDb} = require('./config/db')
+const routing = require('./router/postRouter')
 connectDb()
+
+
+app.use('/api',routing)
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Express Server!');
